@@ -449,7 +449,7 @@ If you encounter any issues or have questions, please:
 
 <div align="center">
 
-**Made with ❤️ by [Rawsab Said](https://github.com/rawsabsaid)**
+**Made with ❤️ by [Rawsab Said](https://github.com/rawsab)**
 
 [GitHub](https://github.com/rawsab/aladhan-MCP-server) • [PyPI](https://pypi.org/project/aladhan-mcp/) • [Issues](https://github.com/rawsab/aladhan-mcp/issues)
 
