@@ -1,3 +1,4 @@
+from mcp.types import TextContent
 from ..utils import ALADHAN_BASE, get_json, text_json
 
 
@@ -6,7 +7,7 @@ def register_date_conversion_tools(server):
         name="list_calculation_methods",
         description="List Aladhan calculation methods (id -> name, params)."
     )
-    async def list_calculation_methods() -> str:
+    async def list_calculation_methods() -> TextContent:
         from ..utils import cache_get, cache_put
         cache_key = "methods"
         payload = cache_get(cache_key, ttl_s=86400)
@@ -17,25 +18,25 @@ def register_date_conversion_tools(server):
 
     @server.tool(
         name="convert_gregorian_to_hijri",
-        description="Convert Gregorian date to Hijri. Args: date (YYYY-MM-DD)."
+        description="Convert Gregorian date to Hijri. Args: date (DD-MM-YYYY)."
     )
-    async def convert_gregorian_to_hijri(date: str) -> str:
+    async def convert_gregorian_to_hijri(date: str) -> TextContent:
         """Convert Gregorian date to Hijri.
         
         Args:
-            date: Gregorian date in YYYY-MM-DD format
+            date: Gregorian date in DD-MM-YYYY format
         """
         date = str(date).strip()
         if not date:
-            raise ValueError("Required: 'date' as YYYY-MM-DD")
-        payload = await get_json(f"{ALADHAN_BASE}/gToH", params={"date": date})
+            raise ValueError("Required: 'date' as DD-MM-YYYY")
+        payload = await get_json(f"{ALADHAN_BASE}/gToH/{date}")
         return text_json(payload.get("data", payload))
 
     @server.tool(
         name="convert_hijri_to_gregorian",
         description="Convert Hijri date to Gregorian. Args: date (DD-MM-YYYY)."
     )
-    async def convert_hijri_to_gregorian(date: str) -> str:
+    async def convert_hijri_to_gregorian(date: str) -> TextContent:
         """Convert Hijri date to Gregorian.
         
         Args:
@@ -44,5 +45,5 @@ def register_date_conversion_tools(server):
         date = str(date).strip()
         if not date:
             raise ValueError("Required: 'date' as DD-MM-YYYY")
-        payload = await get_json(f"{ALADHAN_BASE}/hToG", params={"date": date})
+        payload = await get_json(f"{ALADHAN_BASE}/hToG/{date}")
         return text_json(payload.get("data", payload))

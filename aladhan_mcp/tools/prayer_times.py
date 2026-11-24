@@ -1,6 +1,7 @@
 import datetime as dt
 from typing import Optional
 import httpx
+from mcp.types import TextContent
 from ..utils import ALADHAN_BASE, get_json, text_json
 
 
@@ -17,7 +18,7 @@ def register_prayer_times_tools(server):
         school: Optional[int] = None,
         timezone: Optional[str] = None,
         iso8601: Optional[bool] = None
-    ) -> str:
+    ) -> TextContent:
         """Get daily prayer times by coordinates.
         
         Args:
@@ -75,7 +76,7 @@ def register_prayer_times_tools(server):
         school: Optional[int] = None,
         timezone: Optional[str] = None,
         iso8601: Optional[bool] = None
-    ) -> str:
+    ) -> TextContent:
         """Get daily prayer times by city/country.
         
         Args:
@@ -138,7 +139,7 @@ def register_prayer_times_tools(server):
         school: Optional[int] = None,
         timezone: Optional[str] = None,
         iso8601: Optional[bool] = None
-    ) -> str:
+    ) -> TextContent:
         """Get the next prayer (name and time) for given coordinates.
         
         Args:

@@ -137,7 +137,7 @@ pytest -v
 
 ### Date Conversion Tools
 - **`list_calculation_methods`** - List all  prayer calculation methods
-- **`convert_gregorian_to_hijri`** - Convert Gregorian date to Hijri (YYYY-MM-DD format)
+- **`convert_gregorian_to_hijri`** - Convert Gregorian date to Hijri (DD-MM-YYYY format)
 - **`convert_hijri_to_gregorian`** - Convert Hijri date to Gregorian (DD-MM-YYYY format)
 
 ### Prayer Time Tools

@@ -1,5 +1,6 @@
 from typing import Optional
 import httpx
+from mcp.types import TextContent
 from ..utils import ALADHAN_BASE, get_json, text_json
 
 
@@ -22,7 +23,7 @@ def register_calendar_tools(server):
         calendarMethod: Optional[str] = None,
         midnightMode: Optional[int] = None,
         adjustment: Optional[int] = None
-    ) -> str:
+    ) -> TextContent:
         """Get Hijri month calendar by city/country.
         
         Args:
@@ -94,7 +95,7 @@ def register_calendar_tools(server):
         calendarMethod: Optional[str] = None,
         iso8601: Optional[bool] = None,
         adjustment: Optional[int] = None
-    ) -> str:
+    ) -> TextContent:
         """Get prayer times for a Hijri month by coordinates.
         
         Args:
@@ -175,7 +176,7 @@ def register_calendar_tools(server):
         tune: Optional[str] = None,
         iso8601: Optional[bool] = None,
         adjustment: Optional[int] = None
-    ) -> str:
+    ) -> TextContent:
         """Get prayer times for a Gregorian month by coordinates.
         
         Args:
@@ -262,7 +263,7 @@ def register_calendar_tools(server):
         iso8601: Optional[bool] = None,
         adjustment: Optional[int] = None,
         x7xapikey: Optional[str] = None
-    ) -> str:
+    ) -> TextContent:
         """Get prayer times for a Gregorian month by city/country.
         
         Args:

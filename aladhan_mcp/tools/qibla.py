@@ -1,4 +1,5 @@
 import httpx
+from mcp.types import TextContent
 from ..utils import ALADHAN_BASE, text_json
 
 
@@ -7,7 +8,7 @@ def register_qibla_tools(server):
         name="get_qibla",
         description="Get Qibla direction (bearing, degrees) from latitude/longitude."
     )
-    async def get_qibla(lat: float, lon: float) -> str:
+    async def get_qibla(lat: float, lon: float) -> TextContent:
         """Get Qibla direction from coordinates.
         
         Args:
