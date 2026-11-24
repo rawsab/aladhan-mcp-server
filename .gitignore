@@ -163,3 +163,7 @@ Desktop.ini
 server_old.py
 *.log
 
+
+# Claude Code personal files
+CLAUDE.local.md
+.claude/settings.local.json
